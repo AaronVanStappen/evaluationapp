@@ -7,6 +7,6 @@ package be.vdab.evaluationapp;
 public class EvaluationappApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EvaluationappApplication.class,args);
+		SpringApplication.run(EvaluationappApplication.class, args);
 	}
 }
