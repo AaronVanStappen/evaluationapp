@@ -3,8 +3,8 @@ package be.vdab.evaluationapp.model;
 public class Question {
     int id;
     String question;
-    int questionTypeId;
-    int answerTypeId;
+    QuestionType questionTypeId;
+    AnswerType answerTypeId;
 
     public Question() {}
 
@@ -24,19 +24,19 @@ public class Question {
         this.question = question;
     }
 
-    public int getQuestionTypeId() {
+    public QuestionType getQuestionTypeId() {
         return questionTypeId;
     }
 
-    public void setQuestionTypeId(int questionTypeId) {
+    public void setQuestionTypeId(QuestionType questionTypeId) {
         this.questionTypeId = questionTypeId;
     }
 
-    public int getAnswerTypeId() {
+    public AnswerType getAnswerTypeId() {
         return answerTypeId;
     }
 
-    public void setAnswerTypeId(int answerTypeId) {
+    public void setAnswerTypeId(AnswerType answerTypeId) {
         this.answerTypeId = answerTypeId;
     }
 
