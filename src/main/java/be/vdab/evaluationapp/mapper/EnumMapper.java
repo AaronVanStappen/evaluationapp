@@ -11,7 +11,7 @@ public class EnumMapper {
                 return a;
             }
         }
-        throw new RuntimeException("AnswerType not found");
+        throw new RuntimeException("Answer type not found");
     }
 
     public static QuestionType mapToQuestionType(int question) {
@@ -20,7 +20,7 @@ public class EnumMapper {
                 return q;
             }
         }
-        throw new RuntimeException("QuestionType not found");
+        throw new RuntimeException("Question type not found");
     }
 
     public static CourseTopic mapToCourseTopic(int courseTopic) {
@@ -29,6 +29,6 @@ public class EnumMapper {
                 return c;
             }
         }
-        throw new RuntimeException("CourseTopic not found");
+        throw new RuntimeException("Course topic not found");
     }
 }

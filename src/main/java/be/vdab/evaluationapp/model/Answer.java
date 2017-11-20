@@ -1,12 +1,12 @@
 package be.vdab.evaluationapp.model;
 
 public class Answer {
-    long id;
-    QuestionType questionTypeId;
-    AnswerType answerTypeId;
-    long instructorId;
-    long traineeId;
-    String answer;
+    private long id;
+    private QuestionType questionTypeId;
+    private AnswerType answerTypeId;
+    private long instructorId;
+    private long traineeId;
+    private String answer;
 
     public Answer() {}
 

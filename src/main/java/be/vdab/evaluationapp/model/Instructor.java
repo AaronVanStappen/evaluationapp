@@ -1,9 +1,9 @@
 package be.vdab.evaluationapp.model;
 
 public class Instructor {
-    long id;
-    String firstname;
-    String name;
+    private long id;
+    private String firstname;
+    private String name;
 
     public Instructor() {}
 

@@ -1,10 +1,10 @@
 package be.vdab.evaluationapp.model;
 
 public class Question {
-    int id;
-    String question;
-    QuestionType questionTypeId;
-    AnswerType answerTypeId;
+    private int id;
+    private String question;
+    private QuestionType questionTypeId;
+    private AnswerType answerTypeId;
 
     public Question() {}
 

@@ -3,14 +3,14 @@ package be.vdab.evaluationapp.model;
 import java.sql.Date;
 
 public class Trainee {
-    long id;
-    String firstname;
-    String name;
-    String email;
-    Date date;
-    String phonenumber;
-    String companyName;
-    String jobRole;
+    private long id;
+    private String firstname;
+    private String name;
+    private String email;
+    private Date date;
+    private String phonenumber;
+    private String companyName;
+    private String jobRole;
 
     public Trainee() {}
 
