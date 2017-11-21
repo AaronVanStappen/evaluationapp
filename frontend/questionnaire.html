@@ -10,41 +10,77 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-      <div class="container">
-            <form>
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="inputName">Name: </label>
-                        <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter name">
-                    </div>
-                    <div class="form-group col-md-6">
-                            <label for="inputDate">Date: </label>
-                            <input type="date" class="form-control" id="inputDate" aria-describedby="dateHelp" placeholder="Enter date">
-                    </div>
-                    <div class="form-group col-md-6">
-                            <label for="inputEmail">Email address: </label>
-                            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email address">
-                    </div>
-                    <div class="form-group col-md-6">
-                            <label for="inputPhone">Phone: </label>
-                            <input type="phone" class="form-control" id="inputPhone" aria-describedby="phoneHelp" placeholder="Enter phone number">
-                    </div>
-                    <div class="form-group col-md-6">
-                            <label for="inputJobRole">Job role: </label>
-                            <input type="email" class="form-control" id="inputJobRole" aria-describedby="jobRoleHelp" placeholder="Enter job role">
-                    </div>
-                    <div class="form-group col-md-6">
-                            <label for="inputPhone">Company: </label>
-                            <input type="text" class="form-control" id="inputCompany" aria-describedby="phoneHelp" placeholder="Enter company">
+    <div class="container mt-5 mb-2" id="personalInfo">
+        <form>
+            <div>
+                <h1 id="formTitle">Course Evaluation Form</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group has-danger">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <label for="inputName">Name</label>
+                                <input type="text" class="form-control form-control-danger" id="inputName" aria-describedby="nameHelp" placeholder="Enter first and last name">
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="container">
-                    <p id="formTitle">Course Evaluation Form</p>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <label for="inputDate">Date</label>
+                                <input type="date" class="form-control" id="inputDate" aria-describedby="nameHelp" placeholder="Enter date">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" aria-describedby="nameHelp" placeholder="Enter email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <label for="inputPhone">Phone Number</label>
+                                <input type="phone" class="form-control" id="inputPhone" aria-describedby="nameHelp" placeholder="Enter phone number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <label for="inputJobRole">Job Role</label>
+                                <input type="text" class="form-control" id="inputJobRole" aria-describedby="nameHelp" placeholder="Enter job role">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <label for="inputCompany">Company</label>
+                                <input type="text" class="form-control" id="inputCompany" aria-describedby="nameHelp" placeholder="Enter job role">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="aboutCourse">
                 <div class="row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="selectCourse">Select course</label>
                         <select class="form-control" id="selectCourse">
                             <option>Oracle</option>
@@ -55,7 +91,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="selectInstructor">Select instructor</label>
                         <select class="form-control" id="selectInstructor">
                             <option>Kenneth Van Gijsel</option>
@@ -65,12 +101,19 @@
                             <option>Pietje Uytdebrouck</option>
                         </select>
                     </div>
+                    <div class="form-group col-md-12">
+                        <label for="exampleTextarea">What was your main objective for completing this training?</label>
+                        <textarea class="form-control" id="objective" cols="12" rows="3"></textarea>
+                    </div>
                 </div>
+            </div>
+            <div class="container" id="middleQuestions">
                 <div class="row">
+                    <label for="exampleTextarea">Please indicate on a scale from of 1-5 (1 unacceptable to 5 excellent) how you would rate the following points: </label>
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class="row">
-                                <div><p>General</p></div>
+                                <div><h4>General</h4></div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10"><p>Knowledge and skills gained</p></div>
@@ -119,7 +162,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class="row">
-                                <div><p>Classroom</p></div>
+                                <div><h4>Classroom</h4></div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10"><p>Was the classroom adequately equiped?</p></div>
@@ -150,7 +193,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class="row">
-                                <div><p>Instructor</p></div>
+                                <div><h4>Instructor</h4></div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10"><p>Knowledge of the subject</p></div>
@@ -167,10 +210,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-10"><p>Impact on job effectiveness</p></div>
+                                <div class="col-md-10"><p>Response to questions</p></div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <select class="form-control" id="general2">
+                                        <select class="form-control" id="instructor2">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -181,10 +224,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-10"><p>Impact on career potential</p></div>
+                                <div class="col-md-10"><p>Presentation skills</p></div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <select class="form-control" id="general3">
+                                        <select class="form-control" id="instructor3">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -193,30 +236,103 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10"><p>Ability to provide real world examples</p></div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select class="form-control" id="instructor4">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10"><p>Ability to cover all the stated objectives</p></div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select class="form-control" id="instructor5">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10"><p>Overall impression</p></div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select class="form-control" id="instructor6">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>  
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class="row">
-                                <div><p>Classroom</p></div>
+                                <div><h4>Training content</h4></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-10"><p>Was the classroom adequately equiped?</p></div>
+                                <div class="col-md-10"><p>Logically organised course</p></div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <select class="form-control" id="class1">
-                                            <option>yes</option>
-                                            <option>no</option>
+                                        <select class="form-control" id="content1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-10"><p>Impact on job effectiveness</p></div>
+                                <div class="col-md-10"><p>Clarity of content</p></div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <select class="form-control" id="class2">
+                                        <select class="form-control" id="content2">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10"><p>Quality of courseware</p></div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select class="form-control" id="content3">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-md-10"><p>Was the amount of material presented appropriate for the length of the course?</p></div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select class="form-control" id="content4">
                                             <option>yes</option>
                                             <option>no</option>
                                         </select>
@@ -226,56 +342,41 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="exampleSelect2">Example multiple select</label>
-                    <select multiple class="form-control" id="exampleSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleTextarea">Example textarea</label>
-                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-                </div>
-                <fieldset class="form-group">
-                    <legend>Radio buttons</legend>
-                    <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        Option one is this and that&mdash;be sure to include why it's great
-                    </label>
+            </div>
+            <div id="bottomQuestions">    
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="suggestions"><br>Do you have any suggestions or comments?  
+                        </label>
+                        <textarea class="form-control" id="suggestions" cols="12" rows="4"></textarea>
                     </div>
-                    <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Option two can be something else and selecting it will deselect option one
-                    </label>
+                    <div class="form-group col-md-6">
+                        <label for="topicSelect">Would you like to be notified by email on any of the following topics? (Use the ctrl key to select more than one)</label>
+                        <select multiple class="form-control col-md-12" id="topicSelect">
+                            <option>Adobe</option>
+                            <option>Business Intelligence</option>
+                            <option>General Programming</option>
+                            <option>ITIL and Project Management</option>
+                            <option>Java</option>
+                            <option>SAP</option>
+                            <option>Methodology</option>
+                            <option>Microsoft CRM</option>
+                            <option>Microsoft</option>
+                            <option>Oracle</option>
+                            <option>Testing</option>
+                            <option>Unix/Linux</option>
+                            <option>Web Design</option>
+                            <option>XML</option>
+                            <option>Mobile Apps</option>
+                        </select>
                     </div>
-                    <div class="form-check disabled">
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                        Option three is disabled
-                    </label>
+                    <div class="form-group col-md-1">
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                </fieldset>
-                <div class="form-check">
-                    <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    Check me out
-                    </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-      </div>
+            </div>
+        </form>
+    </div>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
