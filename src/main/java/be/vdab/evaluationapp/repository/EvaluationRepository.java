@@ -7,6 +7,6 @@ import be.vdab.evaluationapp.model.Trainee;
 
 public interface EvaluationRepository {
 
-    int addEvaluation (Trainee trainee, Instructor instructor, Question question, Answer answer);
+    void addEvaluation (Trainee trainee, Instructor instructor, Question question, Answer answer);
 
 }
