@@ -21,11 +21,18 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
 
     @Override
     @Transactional
-    public void addEvaluation(Trainee trainee, Instructor instructor, Question question, Answer answer){
-        addTrainee(trainee);
-        addInstructor(instructor);
-        addQuestion(question);
-        addAnswer(answer);
+    public int addEvaluation(Trainee trainee, Instructor instructor, Question question, Answer answer){
+        int t = addTrainee(trainee);
+        int i = addInstructor(instructor);
+        int q = addQuestion(question);
+        int a = addAnswer(answer);
+        int tot = 0;
+
+        if ((t != 0) && (i != 0) && (q != 0) && (a != 0)) {
+            tot = 1;
+        }
+
+        return tot;
     }
 
     private int addTrainee(Trainee trainee){
