@@ -4,8 +4,8 @@ import be.vdab.evaluationapp.model.AnswerType;
 import be.vdab.evaluationapp.model.CourseTopic;
 import be.vdab.evaluationapp.model.QuestionType;
 
-public class EnumMapper {
-    public static AnswerType mapToAnswerType(int answer) {
+class EnumMapper {
+    static AnswerType mapToAnswerType(int answer) {
         for(AnswerType a: AnswerType.values()) {
             if(a.ordinal() == answer) {
                 return a;
@@ -14,7 +14,7 @@ public class EnumMapper {
         throw new RuntimeException("Answer type not found");
     }
 
-    public static QuestionType mapToQuestionType(int question) {
+    static QuestionType mapToQuestionType(int question) {
         for(QuestionType q : QuestionType.values()) {
             if(q.ordinal() == question) {
                 return q;
@@ -23,7 +23,7 @@ public class EnumMapper {
         throw new RuntimeException("Question type not found");
     }
 
-    public static CourseTopic mapToCourseTopic(int courseTopic) {
+    static CourseTopic mapToCourseTopic(int courseTopic) {
         for(CourseTopic c : CourseTopic.values()) {
             if(c.ordinal() == courseTopic) {
                 return c;
