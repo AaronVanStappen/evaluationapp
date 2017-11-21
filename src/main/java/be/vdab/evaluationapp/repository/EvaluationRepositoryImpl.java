@@ -28,7 +28,7 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
         int a = addAnswer(answer);
         int tot = 0;
 
-        if((t != 0) && (i != 0) && (q != 0) && (a != 0)) {
+        if ((t != 0) && (i != 0) && (q != 0) && (a != 0)) {
             tot = 1;
         }
 
