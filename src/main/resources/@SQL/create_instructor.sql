@@ -1,3 +1,5 @@
+-- DROP TABLE `spring`.`instructor`;
+
 CREATE TABLE `spring`.`instructor` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `firstname` VARCHAR(30) NOT NULL,

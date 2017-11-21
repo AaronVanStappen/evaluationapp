@@ -1,3 +1,5 @@
+-- DROP TABLE `spring`.`answer`;
+
 CREATE TABLE `spring`.`answer` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `questionTypeId` INT NOT NULL,

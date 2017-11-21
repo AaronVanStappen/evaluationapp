@@ -1,3 +1,5 @@
+-- DROP TABLE `spring`.`trainee`;
+
 CREATE TABLE `spring`.`trainee` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `firstname` VARCHAR(30) NOT NULL,

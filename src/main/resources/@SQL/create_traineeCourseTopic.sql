@@ -1,3 +1,5 @@
+-- DROP TABLE `spring`.`traineecoursetopic`;
+
 CREATE TABLE `spring`.`traineecoursetopic` (
   `id` bigint(20) NOT NULL,
   `traineeId` bigint(20) NOT NULL,
