@@ -13,26 +13,65 @@
       <div class="container">
             <form>
                 <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Name: </label>
+                        <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter name">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="inputDate">Date: </label>
+                            <input type="date" class="form-control" id="inputDate" aria-describedby="dateHelp" placeholder="Enter date">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="inputEmail">Email address: </label>
+                            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email address">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="inputPhone">Phone: </label>
+                            <input type="phone" class="form-control" id="inputPhone" aria-describedby="phoneHelp" placeholder="Enter phone number">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="inputJobRole">Job role: </label>
+                            <input type="email" class="form-control" id="inputJobRole" aria-describedby="jobRoleHelp" placeholder="Enter job role">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="inputPhone">Company: </label>
+                            <input type="text" class="form-control" id="inputCompany" aria-describedby="phoneHelp" placeholder="Enter company">
+                    </div>
+                </div>
 
+                <div class="container">
+                    <p id="formTitle">Course Evaluation Form</p>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputName">Name: </label>
-                    <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter name">
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="selectCourse">Select course</label>
+                        <select class="form-control" id="selectCourse">
+                            <option>Oracle</option>
+                            <option>Java</option>
+                            <option>Microsoft</option>
+                            <option>Unix/Linux</option>
+                            <option>General Programming</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="selectInstructor">Select instructor</label>
+                        <select class="form-control" id="selectInstructor">
+                            <option>Kenneth Van Gijsel</option>
+                            <option>Ward de Bever</option>
+                            <option>John Doe</option>
+                            <option>Jan Doe</option>
+                            <option>Pietje Uytdebrouck</option>
+                        </select>
+                    </div>
                 </div>
+                
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <div class="form-group">
-                    <label for="exampleSelect1">Example select</label>
-                    <select class="form-control" id="exampleSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    </select>
-                </div>
+                
                 <div class="form-group">
                     <label for="exampleSelect2">Example multiple select</label>
                     <select multiple class="form-control" id="exampleSelect2">

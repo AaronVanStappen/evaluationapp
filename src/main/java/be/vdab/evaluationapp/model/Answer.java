@@ -6,6 +6,7 @@ public class Answer {
     private AnswerType answerTypeId;
     private long instructorId;
     private long traineeId;
+    private long instructorCourseId;
     private String answer;
 
     public Answer() {}
@@ -50,6 +51,14 @@ public class Answer {
         this.traineeId = traineeId;
     }
 
+    public long getInstructorCourseId() {
+        return instructorCourseId;
+    }
+
+    public void setInstructorCourseId(long instructorCourseId) {
+        this.instructorCourseId = instructorCourseId;
+    }
+
     public String getAnswer() {
         return answer;
     }
@@ -62,10 +71,11 @@ public class Answer {
     public String toString() {
         return "Answer{" +
                 "id=" + id +
-                ", questionTypeId=" + questionTypeId.name() +
-                ", answerTypeId=" + answerTypeId.name() +
+                ", questionTypeId=" + questionTypeId +
+                ", answerTypeId=" + answerTypeId +
                 ", instructorId=" + instructorId +
                 ", traineeId=" + traineeId +
+                ", instructorCourseId=" + instructorCourseId +
                 ", answer='" + answer + '\'' +
                 '}';
     }
