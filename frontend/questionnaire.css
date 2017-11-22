@@ -40,5 +40,15 @@ h4 {
 }
 
 #oak3 {
-    size: 50%;
+    height: 75px;
+}
+
+select {
+    text-align: right;
+    text-align-last: right;
+}
+
+.otherSelects {
+    text-align: left;
+    text-align-last: left;
 }
