@@ -1,0 +1,44 @@
+body {
+    background-color: white;
+}
+
+#formTitle {
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(201, 1, 1);
+}
+
+h4 {
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(201, 1, 1);
+}
+
+#topQuestions {
+    border-style: solid;
+    border-color: rgb(177, 177, 177);
+    border-width: thin;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px 10px 0px 10px;
+    margin-bottom: 20px;
+}
+
+#middleQuestions {
+    border-style: solid;
+    border-color: rgb(177, 177, 177);
+    border-width: thin;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px 25px 0px 25px;
+    margin-bottom: 20px;
+}
+
+#bottomQuestions {
+    border-style: solid;
+    border-color: rgb(177, 177, 177);
+    border-width: thin;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px 10px 0px 10px;
+    margin-bottom: 20px;
+}
+
+#oak3 {
+    size: 50%;
+}
