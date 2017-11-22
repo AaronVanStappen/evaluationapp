@@ -7,10 +7,7 @@ import be.vdab.evaluationapp.model.Trainee;
 import be.vdab.evaluationapp.service.EvaluationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/evaluations")
@@ -28,4 +25,9 @@ public class EvaluationController {
         return ResponseEntity.ok(service.addEvaluation(trainee, instructor, question, answer));
     }
 
+//    for test purposes only !!!
+    @GetMapping
+    public ResponseEntity getEvaluation(){
+        return ResponseEntity.ok("Hello World !!!");
+    }
 }

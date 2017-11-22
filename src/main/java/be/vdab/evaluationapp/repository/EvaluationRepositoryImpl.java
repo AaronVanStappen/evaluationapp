@@ -37,28 +37,41 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
 
     private int addTrainee(Trainee trainee){
 
-        String sql = "INSERT INTO trainee(firstname, name, email, date, phone, company, jobrole) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO trainee(firstname, name, email, phone, company, jobrole) VALUES (?,?,?,?,?,?)";
 
-        return jdbcTemplate.update(sql,trainee.getFirstname(), trainee.getName(), trainee.getEmail(), trainee.getDate(),
+        return jdbcTemplate.update(sql, trainee.getFirstname(), trainee.getName(), trainee.getEmail(),
                 trainee.getPhonenumber(), trainee.getCompanyName(), trainee.getJobRole());
     }
 
     private int addInstructor(Instructor instructor){
+
         String sql = "INSERT INTO instructor(firstname, name) VALUES (?,?)";
 
         return jdbcTemplate.update(sql, instructor.getFirstname(), instructor.getName());
     }
 
     private int addQuestion(Question question){
+
+        System.out.println(question);
+
+        int questionType = (question.getQuestionTypeId().ordinal() + 1);
+        int answerType = (question.getAnswerTypeId().ordinal() + 1);
+
         String sql = "INSERT INTO question(question, questionTypeId, answerTypeId) VALUES (?,?,?)";
 
-        return jdbcTemplate.update(sql, question.getQuestion(), question.getQuestionTypeId(), question.getAnswerTypeId());
+        return jdbcTemplate.update(sql, question.getQuestion(), questionType, answerType);
     }
 
     private int addAnswer(Answer answer){
+
+        System.out.println(answer);
+
+        int questionType = (answer.getQuestionTypeId().ordinal() + 1);
+        int answerType = (answer.getAnswerTypeId().ordinal() + 1);
+
         String sql = "INSERT INTO answer (answer, traineeid, questiontypeid, instructorcourseid, answertypeid) VALUES (?,?,?,?,?)";
 
-        return jdbcTemplate.update(sql, answer.getAnswer(), answer.getTraineeId(), answer.getQuestionTypeId(),
-                answer.getInstructorCourseId(), answer.getAnswerTypeId());
+        return jdbcTemplate.update(sql, answer.getAnswer(), answer.getTraineeId(), questionType,
+                answer.getInstructorCourseId(), answerType);
     }
 }
