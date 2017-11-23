@@ -23,6 +23,7 @@ public class EvaluationServiceTest {
 
     @Test
     public void testAddAnswer(){
+
         List<Answer> testAnswers = new ArrayList<>();
         Answer answer1 = new Answer();
         answer1.setQuestionTypeId(QuestionType.GENERAL);
