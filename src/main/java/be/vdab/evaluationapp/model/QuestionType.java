@@ -1,5 +1,5 @@
 package be.vdab.evaluationapp.model;
 
 public enum QuestionType {
-    FORM, GENERAL, CLASS, INSTRUCTOR, CONTENT
+    HEADER, FOOTER, CLASS, CLASSROOM, INSTRUCTOR, CONTENT
 }

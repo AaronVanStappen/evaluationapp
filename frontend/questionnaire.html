@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="questionnaire.css">
   </head>
-  <body>
+  <body id="body">
     <div class="container mt-5 mb-2" id="personalInfo">
-        <form>
+        <form id="form">
             <div id="top">
                 <div class="row">
                     <div class="form-group col-md-9">
@@ -26,12 +26,12 @@
             </div>
             <div id="topQuestions">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group has-danger">
+                    <!--<div class="col-md-4">
+                        <div class="form-group">
                             <div class="row ">
                                 <div class="col-md-12">
-                                    <label for="inputName">Name</label>
-                                    <input type="text" class= "form-control form-control-danger" id="inputName" aria-describedby="nameHelp" placeholder="Enter first and last name" required>
+                                    <label for="inputName">Frist Name</label>
+                                    <input type="text" class= "form-control" id="inputFirstName" aria-describedby="nameHelp" placeholder="Enter first name" required>
                                 </div>
                             </div>
                         </div>
@@ -40,8 +40,8 @@
                         <div class="form-group">
                             <div class="row ">
                                 <div class="col-md-12">
-                                    <label for="inputDate">Date</label>
-                                    <input type="date" class="form-control" id="inputDate" aria-describedby="nameHelp" placeholder="Enter date">
+                                    <label for="inputDate">Last Name</label>
+                                    <input type="text" class="form-control" id="inputLastName" aria-describedby="nameHelp" placeholder="Enter last name">
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                             <div class="row ">
                                 <div class="col-md-12">
                                     <label for="inputJobRole">Job Role</label>
-                                    <input type="text" class="form-control" id="inputJobRole" aria-describedby="nameHelp" placeholder="Enter job role">
+                                    <input type="text" class="form-control" id="inputJobRole" aria-describedby="nameHelp" placeholder="Enter job role" required>
                                 </div>
                             </div>
                         </div>
@@ -81,30 +81,32 @@
                             <div class="row ">
                                 <div class="col-md-12">
                                     <label for="inputCompany">Company</label>
-                                    <input type="text" class="form-control" id="inputCompany" aria-describedby="nameHelp" placeholder="Enter job role">
+                                    <input type="text" class="form-control" id="inputCompany" aria-describedby="nameHelp" placeholder="Enter company name" required>
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+                    <div class="form-group col-md-4">
+                        <label for="selectTrainee">Select trainee</label>
+                        <select class="form-control otherSelects" id="selectTrainee" required>
+                            <option value="1">Walter Mampay</option>
+                            <option value="2">Valerie Meers</option>
+                            <option value="3">Aaron Van Stappen</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="selectCourse">Select course</label>
                         <select class="form-control otherSelects" id="selectCourse" required>
-                            <option>Oracle</option>
-                            <option>Java</option>
-                            <option>Microsoft</option>
-                            <option>Unix/Linux</option>
-                            <option>General Programming</option>
+                            <option value="1">Java</option>
+                            <option value="2">HTML</option>
                         </select>
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="selectInstructor">Select instructor</label>
                         <select class="form-control otherSelects" id="selectInstructor" required>
-                            <option>Kenneth Van Gijsel</option>
-                            <option>Ward de Bever</option>
-                            <option>John Doe</option>
-                            <option>Jan Doe</option>
-                            <option>Pietje Uytdebrouck</option>
+                            <option value="1">Kenneth Van Gijsel</option>
+                            <option value="2">Noël Vaes</option>
                         </select>
                     </div>
                     <div class="form-group col-md-12">
@@ -127,7 +129,7 @@
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <select class="form-control" id="general1" required>
-                                            <option>1</option>
+                                            <option selected value="1">1</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
@@ -176,8 +178,8 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <select class="form-control" id="class1" required>
-                                            <option>yes</option>
-                                            <option>no</option>
+                                            <option value="true">yes</option>
+                                            <option value="false">no</option>
                                         </select>
                                     </div>
                                 </div>
@@ -187,8 +189,8 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <select class="form-control" id="class2" required>
-                                            <option>yes</option>
-                                            <option>no</option>
+                                            <option value="true">yes</option>
+                                            <option value="false">no</option>
                                         </select>
                                     </div>
                                 </div>
@@ -340,8 +342,8 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <select class="form-control" id="content4" required>
-                                            <option>yes</option>
-                                            <option>no</option>
+                                            <option value="true">yes</option>
+                                            <option value="false">no</option>
                                         </select>
                                     </div>
                                 </div>
@@ -361,22 +363,22 @@
                     <div class="form-group col-md-6">
                         <label for="topicSelect">Would you like to be notified by email on any of the following topics?<br>(Use the ctrl key to select more than one)</label>
                         <select multiple class="form-control col-md-12 otherSelects" id="topicSelect">
-                            <option>---none---</option>
-                            <option>Adobe</option>
-                            <option>Business Intelligence</option>
-                            <option>General Programming</option>
-                            <option>ITIL and Project Management</option>
-                            <option>Java</option>
-                            <option>SAP</option>
-                            <option>Methodology</option>
-                            <option>Microsoft CRM</option>
-                            <option>Microsoft</option>
-                            <option>Oracle</option>
-                            <option>Testing</option>
-                            <option>Unix/Linux</option>
-                            <option>Web Design</option>
-                            <option>XML</option>
-                            <option>Mobile Apps</option>
+                            <option value="NONE">---none---</option>
+                            <option value="ADOBE">Adobe</option>
+                            <option value="BUSINESS_INTELLIGENCE">Business Intelligence</option>
+                            <option value="GENERAL_PROGRAMMING">General Programming</option>
+                            <option value="ITIL_AND_PROJECT_MANAGEMT">ITIL and Project Management</option>
+                            <option value="JAVA">Java</option>
+                            <option value="SAP">SAP</option>
+                            <option value="METHODOLOGY">Methodology</option>
+                            <option value="MICROSOFT_CRM">Microsoft CRM</option>
+                            <option value="MICROSOFT">Microsoft</option>
+                            <option value="ORACLE">Oracle</option>
+                            <option value="TESTING">Testing</option>
+                            <option value="UNIX_LINUX">Unix/Linux</option>
+                            <option value="WEB_DESIGN">Web Design</option>
+                            <option value="XML">XML</option>
+                            <option value="MOBILE_APPS">Mobile Apps</option>
                         </select>
                     </div>
                 </div>
@@ -384,7 +386,7 @@
             <div id="bottom">
                 <div class="row">
                     <div class="form-group col-md-2">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="btn-submit" type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
@@ -393,8 +395,9 @@
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="questionnaire.js"></script>
   </body>
 </html>
