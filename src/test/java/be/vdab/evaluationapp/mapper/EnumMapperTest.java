@@ -12,10 +12,10 @@ public class EnumMapperTest {
     @Test
     public void testMapToAnswerType() {
         //0 = OPEN
-        AnswerType a = EnumMapper.mapToAnswerType(0);
+        AnswerType a = EnumMapper.mapToAnswerType(2);
         assertThat(a).isEqualTo(AnswerType.OPEN);
         assertThat(a.name()).isEqualToIgnoringCase("open");
-        assertThat(a.ordinal()).isEqualTo(0);
+        assertThat(a.ordinal()).isEqualTo(2);
     }
 
    @Test(expected = RuntimeException.class)
@@ -26,10 +26,10 @@ public class EnumMapperTest {
     @Test
     public void testMapToQuestionType() {
         //1 = GENERAL
-        QuestionType q = EnumMapper.mapToQuestionType(1);
-        assertThat(q).isEqualTo(QuestionType.GENERAL);
-        assertThat(q.name()).isEqualToIgnoringCase("general");
-        assertThat(q.ordinal()).isEqualTo(1);
+        QuestionType q = EnumMapper.mapToQuestionType(0);
+        assertThat(q).isEqualTo(QuestionType.HEADER);
+        assertThat(q.name()).isEqualToIgnoringCase("header");
+        assertThat(q.ordinal()).isEqualTo(0);
     }
 
     @Test(expected = RuntimeException.class)
@@ -41,10 +41,10 @@ public class EnumMapperTest {
     public void testMapToCourseTopic() {
         //6 = METHODOLOGY
         CourseTopic c = EnumMapper.mapToCourseTopic(6);
-        assertThat(c).isEqualTo(CourseTopic.METHODOLOGY);
-        assertThat(c.name()).isEqualToIgnoringCase("methodology");
+        assertThat(c).isEqualTo(CourseTopic.SAP);
+        assertThat(c.name()).isEqualToIgnoringCase("sap");
         assertThat(c.ordinal()).isEqualTo(6);
-        assertThat(c.getString()).isEqualToIgnoringCase("methodology");
+        assertThat(c.getString()).isEqualToIgnoringCase("sap");
     }
 
     @Test(expected = RuntimeException.class)

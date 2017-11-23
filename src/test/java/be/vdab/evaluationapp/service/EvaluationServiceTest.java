@@ -2,6 +2,7 @@ package be.vdab.evaluationapp.service;
 
 import be.vdab.evaluationapp.EvaluationappApplication;
 import be.vdab.evaluationapp.model.*;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class EvaluationServiceTest {
 
         List<Answer> testAnswers = new ArrayList<>();
         Answer answer1 = new Answer();
-        answer1.setQuestionTypeId(QuestionType.GENERAL);
+        answer1.setQuestionTypeId(QuestionType.HEADER);
         answer1.setAnswerTypeId(AnswerType.OPEN);
         answer1.setInstructorId(1L);
         answer1.setTraineeId(2L);
