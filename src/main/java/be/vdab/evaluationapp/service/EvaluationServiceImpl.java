@@ -1,13 +1,12 @@
 package be.vdab.evaluationapp.service;
 
 import be.vdab.evaluationapp.model.Answer;
-import be.vdab.evaluationapp.model.Instructor;
-import be.vdab.evaluationapp.model.Question;
-import be.vdab.evaluationapp.model.Trainee;
 import be.vdab.evaluationapp.repository.EvaluationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class EvaluationServiceImpl implements EvaluationService {
@@ -23,7 +22,11 @@ public class EvaluationServiceImpl implements EvaluationService {
     }
 
     @Override
-    public int addEvaluation(Trainee trainee, Instructor instructor, Question question, Answer answer) {
-        return repository.addEvaluation(trainee, instructor, question, answer);
+    public int addAnswer(List<Answer> answerList) {
+        int i = 0;
+        for (Answer answer : answerList) {
+            i += repository.addAnswer(answerList);
+        }
+        return i;
     }
 }

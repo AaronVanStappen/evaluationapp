@@ -1,13 +1,16 @@
 package be.vdab.evaluationapp.model;
 
+import java.sql.Date;
+
 public class Answer {
     private long id;
     private QuestionType questionTypeId;
     private AnswerType answerTypeId;
     private long instructorId;
     private long traineeId;
-    private long instructorCourseId;
+    private long courseId;
     private String answer;
+    private Date date;
 
     public Answer() {}
 
@@ -51,12 +54,12 @@ public class Answer {
         this.traineeId = traineeId;
     }
 
-    public long getInstructorCourseId() {
-        return instructorCourseId;
+    public long getCourseId() {
+        return courseId;
     }
 
-    public void setInstructorCourseId(long instructorCourseId) {
-        this.instructorCourseId = instructorCourseId;
+    public void setCourseId(long courseId) {
+        this.courseId = courseId;
     }
 
     public String getAnswer() {
@@ -67,6 +70,14 @@ public class Answer {
         this.answer = answer;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "Answer{" +
@@ -75,7 +86,7 @@ public class Answer {
                 ", answerTypeId=" + answerTypeId +
                 ", instructorId=" + instructorId +
                 ", traineeId=" + traineeId +
-                ", instructorCourseId=" + instructorCourseId +
+                ", courseId=" + courseId +
                 ", answer='" + answer + '\'' +
                 '}';
     }

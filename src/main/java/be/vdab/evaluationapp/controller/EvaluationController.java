@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/evaluations")
 public class EvaluationController {
@@ -21,8 +23,8 @@ public class EvaluationController {
     }
 
     @PostMapping
-    public ResponseEntity addEvaluation(@RequestBody Trainee trainee, @RequestBody Instructor instructor, @RequestBody Question question, @RequestBody Answer answer) {
-        return ResponseEntity.ok(service.addEvaluation(trainee, instructor, question, answer));
+    public ResponseEntity addEvaluation(@RequestBody List<Answer> answerList) {
+        return ResponseEntity.ok(service.addAnswer(answerList));
     }
 
 //    for test purposes only !!!

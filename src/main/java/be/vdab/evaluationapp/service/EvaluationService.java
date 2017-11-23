@@ -5,8 +5,10 @@ import be.vdab.evaluationapp.model.Instructor;
 import be.vdab.evaluationapp.model.Question;
 import be.vdab.evaluationapp.model.Trainee;
 
+import java.util.List;
+
 public interface EvaluationService {
 
-    int addEvaluation (Trainee trainee, Instructor instructor, Question question, Answer answer);
+    int addAnswer (List<Answer> answerList);
 
 }

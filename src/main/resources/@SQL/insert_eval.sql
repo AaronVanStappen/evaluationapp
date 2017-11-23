@@ -134,7 +134,7 @@ INSERT INTO `answer`
 (`id`,
 `questionTypeId`,
 `answerTypeId`,
-`instructorCourseId`,
+`courseId`,
 `traineeId`,
 `answer`)
 VALUES
