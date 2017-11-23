@@ -19,33 +19,33 @@ INSERT INTO `trainee`
 `firstname`,
 `name`,
 `email`,
-`date`,
 `phone`,
 `company`,
 `jobrole`)
 VALUES
- (1, "Tom", "Claes", "Tom@Claes.be", current_timestamp(), "+32494987654", "QNH", "Trainee")
-,(2, "Piet", "Hein", "Piet@Hein.be", current_timestamp(), "+316654321", "QNH", "Account manager")
+ (1, "Tom", "Claes", "Tom@Claes.be", "+32494987654", "QNH", "Trainee")
+,(2, "Piet", "Hein", "Piet@Hein.be", "+316654321", "QNH", "Account manager")
 ;
 
 INSERT INTO `coursetopic`
 (`id`, `name`)
 VALUES
- (1, "Adobe")
-,(2, "Business Intelligence")
-,(3, "General Programming")
-,(4, "ITIL and Project Management")
-,(5, "Java")
-,(6, "SAP")
-,(7, "Methodology")
-,(8, "Microsoft CRM")
-,(9, "Microsoft")
-,(10, "Oracle")
-,(11, "Testing")
-,(12, "Unix/Linux")
-,(13, "Web Design")
-,(14, "XML")
-,(15, "Mobile Apps")
+ (1, "None")
+,(2, "Adobe")
+,(3, "Business Intelligence")
+,(4, "General Programming")
+,(5, "ITIL and Project Management")
+,(6, "Java")
+,(7, "SAP")
+,(8, "Methodology")
+,(9, "Microsoft CRM")
+,(10, "Microsoft")
+,(11, "Oracle")
+,(12, "Testing")
+,(13, "Unix/Linux")
+,(14, "Web Design")
+,(15, "XML")
+,(16, "Mobile Apps")
 ;
 
 INSERT INTO `traineecoursetopic`
@@ -134,25 +134,27 @@ INSERT INTO `answer`
 (`id`,
 `questionTypeId`,
 `answerTypeId`,
-`courseId`,
+`instructorId`,
+`CourseId`,
 `traineeId`,
-`answer`)
+`answer`,
+`date`)
 VALUES
- (1, 1, 3, 1, 1, "Learning Java as a complete beginner.")
-,(2, 3, 1, 1, 1, "1")
-,(3, 3, 1, 1, 1, "1")
-,(4, 3, 1, 1, 1, "1")
-,(5, 4, 2, 1, 1, "N")
-,(6, 4, 2, 1, 1, "Y")
-,(7, 5, 1, 1, 1, "4")
-,(8, 5, 1, 1, 1, "5")
-,(9, 5, 1, 1, 1, "4")
-,(10, 5, 1, 1, 1, "3")
-,(11, 5, 1, 1, 1, "5")
-,(12, 5, 1, 1, 1, "1")
-,(13, 6, 1, 1, 1, "2")
-,(14, 6, 1, 1, 1, "1")
-,(15, 6, 1, 1, 1, "4")
-,(16, 6, 2, 1, 1, "Y")
-,(17, 2, 3, 1, 1, "There was too much content for too short a period.")
+ (1, 1, 1, 1, 1, 1, "Learning Java as a complete beginner.",current_timestamp())
+,(2, 3, 1, 1, 1, 1, "1",current_timestamp())
+,(3, 3, 1, 1, 1, 1, "1",current_timestamp())
+,(4, 3, 1, 1, 1, 1, "1",current_timestamp())
+,(5, 4, 1, 1, 1, 1, "N",current_timestamp())
+,(6, 4, 1, 1, 1, 1, "Y",current_timestamp())
+,(7, 5, 1, 1, 1, 1, "4",current_timestamp())
+,(8, 5, 1, 1, 1, 1, "5",current_timestamp())
+,(9, 5, 1, 1, 1, 1, "4",current_timestamp())
+,(10, 5, 1, 1, 1, 1, "3",current_timestamp())
+,(11, 5, 1, 1, 1, 1, "5",current_timestamp())
+,(12, 5, 1, 1, 1, 1, "1",current_timestamp())
+,(13, 6, 1, 1, 1, 1, "2",current_timestamp())
+,(14, 6, 1, 1, 1, 1, "1",current_timestamp())
+,(15, 6, 1, 1, 1, 1, "4",current_timestamp())
+,(16, 6, 1, 1, 1, 1, "Y",current_timestamp())
+,(17, 2, 1, 1, 1, 1, "There was too much content for too short a period.",current_timestamp())
 ;
