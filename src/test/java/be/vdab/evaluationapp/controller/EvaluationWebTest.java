@@ -37,12 +37,16 @@ public class EvaluationWebTest {
     }
 
     @Test
-    public void testAddEvaluation() {
+    public void testAddAnswer() {
         HttpHeaders headers = new HttpHeaders(); // opgeven welk formaat we gaan meegeven !
         headers.setContentType(MediaType.APPLICATION_JSON); // we geven Json formaat mee in de body.
 
         String jsonEvaluation =
-        "[{\"firstname\":\"Jean\",\"name\":\"Baptist\",\"email\":\"jean@baptist.be\",\"phonenumber\":\"011223121\",\"companyname\":BP,\"jobrole\":concierge\"}{\"firstname\":\"René\",\"name\":Thijs\"}{\"question\":\"Is 't eten nog nie gereed?\",\"questiontypeid\":1\",\"answertypeid\":2\"}{\"questiontypeid\":\"1\",\"answertypeid\":2\",\"instructorid\":2\",\"traineeid\":\"1\",\"instructorcourseid\":2\",\"answer\":\"Bijna!\"}]";
+                "[ {\"id\" : null, \"date\" : null,\"answer\" : \"1\", \"traineeid\" : 1, \"questiontypeid\" : 1, \"instructorid\" :1,\"courseid\": 1, \"answertypeid\" : 3},\n" +
+                "  {\"id\" : null, \"date\" : null,\"answer\" : \"2\", \"traineeid\" : 1, \"questiontypeid\" : 3, \"instructorid\" :1,\"courseid\": 1, \"answertypeid\" : 1},\n" +
+                "  {\"id\" : null, \"date\" : null,\"answer\" : \"3\", \"traineeid\" : 1, \"questiontypeid\" : 3, \"instructorid\" :1,\"courseid\": 1, \"answertypeid\" : 1}]";
+
+        //"[{\"firstname\":\"Jean\",\"name\":\"Baptist\",\"email\":\"jean@baptist.be\",\"phonenumber\":\"011223121\",\"companyname\":BP,\"jobrole\":concierge\"}{\"firstname\":\"René\",\"name\":Thijs\"}{\"question\":\"Is 't eten nog nie gereed?\",\"questiontypeid\":1\",\"answertypeid\":2\"}{\"questiontypeid\":\"1\",\"answertypeid\":2\",\"instructorid\":2\",\"traineeid\":\"1\",\"instructorcourseid\":2\",\"answer\":\"Bijna!\"}]";
 
         HttpEntity<String> data = new HttpEntity<>(jsonEvaluation, headers);
 

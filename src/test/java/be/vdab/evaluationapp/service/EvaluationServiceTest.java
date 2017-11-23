@@ -26,7 +26,7 @@ public class EvaluationServiceTest {
 
         List<Answer> testAnswers = new ArrayList<>();
         Answer answer1 = new Answer();
-        answer1.setQuestionTypeId(QuestionType.GENERAL);
+        answer1.setQuestionTypeId(QuestionType.CLASS);
         answer1.setAnswerTypeId(AnswerType.OPEN);
         answer1.setInstructorId(1L);
         answer1.setTraineeId(2L);

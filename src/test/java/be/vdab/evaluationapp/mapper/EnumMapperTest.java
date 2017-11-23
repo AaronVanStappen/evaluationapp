@@ -27,7 +27,7 @@ public class EnumMapperTest {
     public void testMapToQuestionType() {
         //1 = GENERAL
         QuestionType q = EnumMapper.mapToQuestionType(1);
-        assertThat(q).isEqualTo(QuestionType.GENERAL);
+        assertThat(q).isEqualTo(QuestionType.CLASS);
         assertThat(q.name()).isEqualToIgnoringCase("general");
         assertThat(q.ordinal()).isEqualTo(1);
     }
