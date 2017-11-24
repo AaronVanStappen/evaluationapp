@@ -128,7 +128,7 @@ $(document).ready (function () {
             {"answer" : topicSelect, "traineeId" : selectTraineeId, "questionTypeId" : 2, "instructorId" : selectInstructorId,
             "courseId": selectCourseId, "answerTypeId" : 1}
         ]);
-        console.log(form);
+        console.log(topicSelect);
         $.ajax({
             type: "POST",
             url: url,

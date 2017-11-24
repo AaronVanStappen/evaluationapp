@@ -21,8 +21,13 @@ public class EvaluationServiceImpl implements EvaluationService {
     }
 
     @Override
-    public int addAnswer(ArrayList<Answer> answerList) {
-        return repository.addAnswer(answerList);
+    public int addAnswers(ArrayList<Answer> answerList) {
+        return repository.addAnswers(answerList);
+    }
+
+    @Override
+    public List<Answer> getAnswers(){
+        return repository.getAnswers();
     }
 
     @Override
