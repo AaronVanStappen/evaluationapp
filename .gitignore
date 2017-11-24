@@ -16,6 +16,7 @@ target/
 *.ipr
 *.properties
 *.bak
+application.properties
 
 ### NetBeans ###
 nbproject/private/
