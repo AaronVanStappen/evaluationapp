@@ -92,8 +92,8 @@ VALUES
 INSERT INTO `questiontype`
 (`id`, `type`)
 VALUES
- (1, "OPEN HEADER")
-,(2, "OPEN FOOTER")
+ (1, "HEADER")
+,(2, "FOOTER")
 ,(3, "GENERAL")
 ,(4, "CLASSROOM")
 ,(5, "INSTRUCTOR")
