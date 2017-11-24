@@ -30,6 +30,7 @@ public class EnumMapperTest {
         assertThat(q).isEqualTo(QuestionType.HEADER);
         assertThat(q.name()).isEqualToIgnoringCase("header");
         assertThat(q.ordinal()).isEqualTo(0);
+
     }
 
     @Test(expected = RuntimeException.class)

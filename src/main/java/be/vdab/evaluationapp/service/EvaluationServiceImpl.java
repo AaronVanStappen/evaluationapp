@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,11 +23,7 @@ public class EvaluationServiceImpl implements EvaluationService {
     }
 
     @Override
-    public int addAnswer(List<Answer> answerList) {
-        int i = 0;
-        for (Answer answer : answerList) {
-            i += repository.addAnswer(answerList);
-        }
-        return i;
+    public int addAnswer(ArrayList<Answer> answerList) {
+        return repository.addAnswer(answerList);
     }
 }
