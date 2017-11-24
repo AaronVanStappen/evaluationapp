@@ -23,10 +23,6 @@ public class EvaluationServiceImpl implements EvaluationService {
 
     @Override
     public int addAnswer(List<Answer> answerList) {
-        int i = 0;
-        for (Answer answer : answerList) {
-            i += repository.addAnswer(answerList);
-        }
-        return i;
+       return repository.addAnswer(answerList);
     }
 }
