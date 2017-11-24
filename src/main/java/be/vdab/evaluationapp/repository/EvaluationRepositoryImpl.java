@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -23,7 +24,7 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
 
     @Override
     @Transactional
-    public int addAnswer(List<Answer> answerList){
+    public int addAnswer(ArrayList<Answer> answerList){
 
             int numberAnswersInserted = 0;
             int questionType;
