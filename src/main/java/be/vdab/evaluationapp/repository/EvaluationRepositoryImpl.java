@@ -1,16 +1,12 @@
 package be.vdab.evaluationapp.repository;
 
 import be.vdab.evaluationapp.model.Answer;
-import be.vdab.evaluationapp.model.Instructor;
-import be.vdab.evaluationapp.model.Question;
-import be.vdab.evaluationapp.model.Trainee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Repository
 public class EvaluationRepositoryImpl implements EvaluationRepository {
@@ -24,30 +20,41 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
 
     @Override
     @Transactional
-    public int addAnswer(ArrayList<Answer> answerList){
+    public int addAnswer(ArrayList<Answer> answerList) {
 
-            int numberAnswersInserted = 0;
-            int questionType;
-            int answerType;
-            String sql;
+        int numberAnswersInserted = 0;
+        int questionType;
+        int answerType;
+        String sql;
 
-            for (Answer answer : answerList) {
+        System.out.println("VOOR FOR LOOP");
 
-                System.out.println(answer);
+        for (Answer answer : answerList) {
 
-                questionType = (answer.getQuestionTypeId().ordinal() + 1);
-                answerType = (answer.getAnswerTypeId().ordinal() + 1);
+            System.out.println("Answer: " + answer);
+
+            questionType = (answer.getQuestionTypeId().ordinal() + 1);
+            answerType = (answer.getAnswerTypeId().ordinal() + 1);
 
 
-                sql = "INSERT INTO answer (answer, traineeid, questiontypeid, instructorid, courseid, answertypeid) VALUES (?,?,?,?,?,?)";
+            sql = "INSERT INTO answer (answer, traineeid, questiontypeid, instructorid, courseid, answertypeid) VALUES (?,?,?,?,?,?)";
 
 
-                numberAnswersInserted += jdbcTemplate.update(sql, answer.getAnswer(), answer.getTraineeId(), questionType,
-                        answer.getInstructorId(), answer.getCourseId(), answerType);
-            }
-
-            return numberAnswersInserted;
+            numberAnswersInserted += jdbcTemplate.update(sql, answer.getAnswer(), answer.getTraineeId(), questionType,
+                    answer.getInstructorId(), answer.getCourseId(), answerType);
         }
+
+        return numberAnswersInserted;
+    }
+
+    @Override
+    public int addAnswer(Answer answer) {
+//        Integer questionType = (answer.getQuestionTypeId().ordinal() + 1);
+//        Integer answerType = (answer.getAnswerTypeId().ordinal() + 1);
+        String  sql = "INSERT INTO answer (answer, traineeid, questiontypeid, instructorid, courseid, answertypeid) VALUES (?,?,?,?,?,?)";
+        return jdbcTemplate.update(sql, answer.getAnswer(), answer.getTraineeId(), 2,
+                answer.getInstructorId(), answer.getCourseId(), 1);
+    }
 
 
 //    @Override
