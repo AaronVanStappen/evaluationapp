@@ -6,14 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Service
 public class EvaluationServiceImpl implements EvaluationService {
 
     private final MessageSource ms;
     private final EvaluationRepository repository;
-
 
     @Autowired
     public EvaluationServiceImpl(EvaluationRepository repository, MessageSource ms) {
@@ -22,7 +21,12 @@ public class EvaluationServiceImpl implements EvaluationService {
     }
 
     @Override
-    public int addAnswer(List<Answer> answerList) {
-       return repository.addAnswer(answerList);
+    public int addAnswer(ArrayList<Answer> answerList) {
+        return repository.addAnswer(answerList);
+    }
+
+    @Override
+    public int addAnswer(Answer answer) {
+        return repository.addAnswer(answer);
     }
 }

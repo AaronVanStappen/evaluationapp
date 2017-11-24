@@ -42,7 +42,7 @@ public class EvaluationWebTest {
         headers.setContentType(MediaType.APPLICATION_JSON); // we geven Json formaat mee in de body.
 
         String jsonEvaluation =
-                "[{\"answer\" : \"Computer says no?\", \"traineeid\" : 1, \"questiontypeid\" : 1, \"instructorid\" : 1, \"courseid\" : 1, \"answertypeid\" : 1}]";
+                "{\"answer\" : \"Computer says no?\", \"traineeid\" : 1, \"questiontypeid\" : 2, \"instructorid\" : 1, \"courseid\" : 1, \"answertypeid\" : 2}";
 //                "[{\"answer\" : \"Computer says no?\", \"traineeid\" : 1, \"questiontypeid\" : 1, \"instructorid\" : 1, \"courseid\": 1, \"answertypeid\" : 3},\n" +
 //                " {\"id\" : null, \"date\" : null,\"answer\" : \"2\", \"traineeid\" : 1, \"questiontypeid\" : 3, \"instructorid\" :1,\"courseid\": 1, \"answertypeid\" : 1},\n" +
 //                " {\"id\" : null, \"date\" : null,\"answer\" : \"3\", \"traineeid\" : 1, \"questiontypeid\" : 3, \"instructorid\" :1,\"courseid\": 1, \"answertypeid\" : 1}]";

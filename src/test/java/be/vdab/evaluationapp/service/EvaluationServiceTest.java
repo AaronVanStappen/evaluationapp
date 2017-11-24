@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class EvaluationServiceTest {
     @Test
     public void testAddAnswer(){
 
-        List<Answer> testAnswers = new ArrayList<>();
+        ArrayList<Answer> testAnswers = new ArrayList<>();
         Answer answer1 = new Answer();
         answer1.setQuestionTypeId(QuestionType.HEADER);
         answer1.setAnswerTypeId(AnswerType.OPEN);
@@ -33,7 +34,21 @@ public class EvaluationServiceTest {
         answer1.setTraineeId(2L);
         answer1.setCourseId(1L);
         answer1.setAnswer("Antwoord op de vraag");
+
+        Answer answer2 = new Answer();
+        answer2.setQuestionTypeId(QuestionType.HEADER);
+        answer2.setAnswerTypeId(AnswerType.OPEN);
+        answer2.setInstructorId(1L);
+        answer2.setTraineeId(2L);
+        answer2.setCourseId(1L);
+        answer2.setAnswer("Antwoord op de vraag 2");
         testAnswers.add(answer1);
+        testAnswers.add(answer2);
+
+        int result = service.addAnswer(testAnswers);
+        assertThat(testAnswers).isNotNull();
+        assertThat(testAnswers).hasSize(2);
+        assertThat(result).isEqualTo(2);
     }
 
 //    @Test

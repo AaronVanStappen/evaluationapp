@@ -11,5 +11,6 @@ import java.util.List;
 public interface EvaluationService {
 
     int addAnswer (ArrayList<Answer> answerList);
+    int addAnswer(Answer answer);
 
 }
