@@ -1,6 +1,6 @@
 $(document).ready (function () {
     const body = document.getElementById("body");
-    const url = "http://localhost:8080/evaluations";
+    const url = "http://localhost:8085/evaluations";
     const submit = document.getElementById("btn-submit");
     var selectTraineeId = "1";
     $('#selectTrainee').change(function (e) {
@@ -74,56 +74,61 @@ $(document).ready (function () {
     $('#content4').change(function (e) {
         content4 = e.target.value;
     });
+
+    var topicSelect = "none";
+    $('#topicSelect').on('change',function() {
+        topicSelect = $(this).val() == "" ? "none" : $(this).val().toString();
+    });
     
-       $("#body").on("click", "#btn-submit", function() {
-           /*var firstName = document.getElementById("inputFirstName").value;
-           var lastName = document.getElementById("inputLastName").value;
-           var email = document.getElementById("inputEmail").value;
-           var phone = document.getElementById("inputPhone").value;
-           var jobRole = document.getElementById("inputJobRole").value;
-           var company = document.getElementById("inputCompany").value;*/
-    
-           var objective = document.getElementById("objective").value;
-           var suggestions = document.getElementById("suggestions").value;
-           var form = JSON.stringify([
-            {"answer" : objective, "traineeId" : selectTraineeId, "questionTypeId" : 1, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 3},
-            {"answer" : general1, "traineeId" : selectTraineeId, "questionTypeId" : 3, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : general2, "traineeId" : selectTraineeId, "questionTypeId" : 3, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : general3, "traineeId" : selectTraineeId, "questionTypeId" : 3, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : class1, "traineeId" : selectTraineeId, "questionTypeId" : 4, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 2},
-            {"answer" : class2, "traineeId" : selectTraineeId, "questionTypeId" : 4, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 2},
-            {"answer" : instructor1, "traineeId" : selectTraineeId, "questionTypeId" : 5, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : instructor2, "traineeId" : selectTraineeId, "questionTypeId" : 5, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : instructor3, "traineeId" : selectTraineeId, "questionTypeId" : 5, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : instructor4, "traineeId" : selectTraineeId, "questionTypeId" : 5, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : instructor5, "traineeId" : selectTraineeId, "questionTypeId" : 5, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : instructor6, "traineeId" : selectTraineeId, "questionTypeId" : 5, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : content1, "traineeId" : selectTraineeId, "questionTypeId" : 6, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : content2, "traineeId" : selectTraineeId, "questionTypeId" : 6, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : content3, "traineeId" : selectTraineeId, "questionTypeId" : 6, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1},
-            {"answer" : content4, "traineeId" : selectTraineeId, "questionTypeId" : 6, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 2},
-            {"answer" : suggestions, "traineeId" : selectTraineeId, "questionTypeId" : 2, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 3},
-            {"answer" : topicSelect, "traineeId" : selectTraineeId, "questionTypeId" : 2, "instructorId" : selectInstructorId,
-            "courseId": selectCourseId, "answerTypeId" : 1}
-        ]);
+    $("#body").on("click", "#btn-submit", function() {
+        /*var firstName = document.getElementById("inputFirstName").value;
+        var lastName = document.getElementById("inputLastName").value;
+        var email = document.getElementById("inputEmail").value;
+        var phone = document.getElementById("inputPhone").value;
+        var jobRole = document.getElementById("inputJobRole").value;
+        var company = document.getElementById("inputCompany").value;*/
+
+        var objective = document.getElementById("objective").value;
+        var suggestions = document.getElementById("suggestions").value;
+        var form = JSON.stringify(
+        {"answer" : objective, "traineeId" : selectTraineeId, "questionTypeId" : "HEADER", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "OPEN"},
+        {"answer" : general1, "traineeId" : selectTraineeId, "questionTypeId" : "GENERAL", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : general2, "traineeId" : selectTraineeId, "questionTypeId" : "GENERAL", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : general3, "traineeId" : selectTraineeId, "questionTypeId" : "GENERAL", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : class1, "traineeId" : selectTraineeId, "questionTypeId" : "CLASS", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "YESNO"},
+        {"answer" : class2, "traineeId" : selectTraineeId, "questionTypeId" : "CLASS", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "YESNO"},
+        {"answer" : instructor1, "traineeId" : selectTraineeId, "questionTypeId" : "INSTRUCTOR", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : instructor2, "traineeId" : selectTraineeId, "questionTypeId" : "INSTRUCTOR", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : instructor3, "traineeId" : selectTraineeId, "questionTypeId" : "INSTRUCTOR", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : instructor4, "traineeId" : selectTraineeId, "questionTypeId" : "INSTRUCTOR", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : instructor5, "traineeId" : selectTraineeId, "questionTypeId" : "INSTRUCTOR", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : instructor6, "traineeId" : selectTraineeId, "questionTypeId" : "INSTRUCTOR", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : content1, "traineeId" : selectTraineeId, "questionTypeId" : "CONTENT", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : content2, "traineeId" : selectTraineeId, "questionTypeId" : "CONTENT", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : content3, "traineeId" : selectTraineeId, "questionTypeId" : "CONTENT", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"},
+        {"answer" : content4, "traineeId" : selectTraineeId, "questionTypeId" : "CONTENT", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "YESNO"},
+        {"answer" : suggestions, "traineeId" : selectTraineeId, "questionTypeId" : "FOOTER", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "OPEN"},
+        {"answer" : topicSelect, "traineeId" : selectTraineeId, "questionTypeId" : "FOOTER", "instructorId" : selectInstructorId,
+        "courseId": selectCourseId, "answerTypeId" : "NUM"});
         console.log(form);
+
         $.ajax({
             type: "POST",
             url: url,

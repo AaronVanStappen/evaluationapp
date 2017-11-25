@@ -1,17 +1,23 @@
 package be.vdab.evaluationapp.repository;
 
+import be.vdab.evaluationapp.mapper.EnumMapper;
 import be.vdab.evaluationapp.model.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
+
 
 @Repository
 public class EvaluationRepositoryImpl implements EvaluationRepository {
 
     private JdbcTemplate jdbcTemplate;
+    /*public List<Answer> answerList = new ArrayList();*/
 
     @Autowired
     EvaluationRepositoryImpl(JdbcTemplate jdbcTemplate) {
@@ -20,18 +26,16 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
 
     @Override
     @Transactional
-    public int addAnswer(ArrayList<Answer> answerList) {
+    public int addAnswers(ArrayList<Answer> answerList) {
 
         int numberAnswersInserted = 0;
         int questionType;
         int answerType;
         String sql;
 
-        System.out.println("VOOR FOR LOOP");
-
         for (Answer answer : answerList) {
 
-            System.out.println("Answer: " + answer);
+            System.out.println(answer);
 
             questionType = (answer.getQuestionTypeId().ordinal() + 1);
             answerType = (answer.getAnswerTypeId().ordinal() + 1);
@@ -48,16 +52,28 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
     }
 
     @Override
-    public int addAnswer(Answer answer) {
-//        Integer questionType = (answer.getQuestionTypeId().ordinal() + 1);
-//        Integer answerType = (answer.getAnswerTypeId().ordinal() + 1);
-        String  sql = "INSERT INTO answer (answer, traineeid, questiontypeid, instructorid, courseid, answertypeid) VALUES (?,?,?,?,?,?)";
-        return jdbcTemplate.update(sql, answer.getAnswer(), answer.getTraineeId(), 2,
-                answer.getInstructorId(), answer.getCourseId(), 1);
+    public List<Answer> getAnswers() {
+        return jdbcTemplate.query("SELECT * FROM answer", (rs, rowNum) -> {
+            Answer answer = new Answer();
+            try {
+                answer.setId(rs.getInt("id"));
+                answer.setTraineeId(rs.getInt("traineeid"));
+                System.out.println(rs.getInt("questiontypeid"));
+                answer.setQuestionTypeId(EnumMapper.mapToQuestionType(rs.getInt("questiontypeid") - 1));
+                answer.setAnswerTypeId(EnumMapper.mapToAnswerType(rs.getInt("answertypeid") - 1));
+                answer.setInstructorId(rs.getInt("instructorid"));
+                answer.setCourseId(rs.getInt("courseid"));
+                answer.setAnswer(rs.getString("answer"));
+                answer.setDate(rs.getDate(("date")));
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return answer;
+        });
     }
 
-
-//    @Override
+    //    @Override
 //    @Transactional
 //    public int addEvaluation(Answer answer){
 //        int t = addTrainee(trainee);
