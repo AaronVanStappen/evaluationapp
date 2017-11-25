@@ -1,24 +1,12 @@
 package be.vdab.evaluationapp.controller;
 
-import be.vdab.evaluationapp.model.Trainee;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.*;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
-
-import java.awt.print.Book;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -29,7 +17,7 @@ public class EvaluationWebTest {
 
     // Server moet draaien : Dus eerst starten !
     // URL moet overeenkomen met die uit de controller van de te testen methode !
-    private static final String URL = "http://localhost:8080/evaluations/answer";
+    private static final String URL = "http://localhost:8080/evaluations/answers";
     private RestTemplate template;
 
     @Before
@@ -38,12 +26,15 @@ public class EvaluationWebTest {
     }
 
     @Test
-    public void testAddAnswer() {
+    public void testAddAnswers() {
         HttpHeaders headers = new HttpHeaders(); // opgeven welk formaat we gaan meegeven !
         headers.setContentType(MediaType.APPLICATION_JSON); // we geven Json formaat mee in de body.
 
+        // camelCase voor de veldnamen is NIET verplicht maar duidelijker.
+        // gebruik ENUM waarden is VERPLICHT ; geen ORDINAL waarden dus.
+        // de methode testAddAnswers verwacht een ArrayList. Daarom moeten er vierkante haken rond de Json string. We hadden dit aangepast om te testen maar dat is nu eruit gehaald ...
         String jsonEvaluation =
-                "{\"answer\" : \"Computer says no?\", \"traineeId\" : 1, \"questiontypeid\" : 2, \"instructorid\" : 1, \"courseid\" : 1, \"answertypeid\" : 2}";
+                "[{\"answer\" : \"Computer says no?\", \"traineeId\" : 1, \"questionTypeId\" : \"GENERAL\", \"instructorId\" : 1, \"courseId\" : 1, \"answerTypeId\" : \"OPEN\"}]";
 //                "[{\"answer\" : \"Computer says no?\", \"traineeid\" : 1, \"questiontypeid\" : 1, \"instructorid\" : 1, \"courseid\": 1, \"answertypeid\" : 3},\n" +
 //                " {\"id\" : null, \"date\" : null,\"answer\" : \"2\", \"traineeid\" : 1, \"questiontypeid\" : 3, \"instructorid\" :1,\"courseid\": 1, \"answertypeid\" : 1},\n" +
 //                " {\"id\" : null, \"date\" : null,\"answer\" : \"3\", \"traineeid\" : 1, \"questiontypeid\" : 3, \"instructorid\" :1,\"courseid\": 1, \"answertypeid\" : 1}]";
@@ -109,4 +100,3 @@ public class EvaluationWebTest {
         }
 */
 }
-
