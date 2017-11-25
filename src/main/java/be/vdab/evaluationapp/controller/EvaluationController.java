@@ -28,10 +28,10 @@ public class EvaluationController {
         return ResponseEntity.ok(service.addAnswers(answerList));
     }
 
-    @RequestMapping(value = "/answer", method = RequestMethod.POST)
-    public ResponseEntity addAnswer(@RequestBody Answer answer) {
-        return ResponseEntity.ok(service.addAnswer(answer));
-    }
+//    @RequestMapping(value = "/answer", method = RequestMethod.POST)
+//    public ResponseEntity addAnswer(@RequestBody Answer answer) {
+//        return ResponseEntity.ok(service.addAnswer(answer));
+//    }
 
 //    for test purposes only !!!
     @GetMapping
