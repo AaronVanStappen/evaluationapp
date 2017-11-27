@@ -24,7 +24,7 @@ public class EvaluationServiceTest {
     private EvaluationService service;
 
     @Test
-    public void testAddAnswer(){
+    public void testAddAnswers(){
 
         ArrayList<Answer> testAnswers = new ArrayList<>();
         Answer answer1 = new Answer();
@@ -45,7 +45,7 @@ public class EvaluationServiceTest {
         testAnswers.add(answer1);
         testAnswers.add(answer2);
 
-        int result = service.addAnswer(testAnswers);
+        int result = service.addAnswers(testAnswers);
         assertThat(testAnswers).isNotNull();
         assertThat(testAnswers).hasSize(2);
         assertThat(result).isEqualTo(2);

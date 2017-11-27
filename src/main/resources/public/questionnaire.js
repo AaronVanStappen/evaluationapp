@@ -1,7 +1,5 @@
 $(document).ready (function () {
-    const body = document.getElementById("body");
-    const url = "http://localhost:8085/evaluations";
-    const submit = document.getElementById("btn-submit");
+    const url = "http://localhost:8085/evaluations/answers";
     var selectTraineeId = "1";
     $('#selectTrainee').change(function (e) {
         selectTraineeId = $(this).val();
@@ -90,7 +88,7 @@ $(document).ready (function () {
 
         var objective = document.getElementById("objective").value;
         var suggestions = document.getElementById("suggestions").value;
-        var form = JSON.stringify(
+        var form = JSON.stringify([
         {"answer" : objective, "traineeId" : selectTraineeId, "questionTypeId" : "HEADER", "instructorId" : selectInstructorId,
         "courseId": selectCourseId, "answerTypeId" : "OPEN"},
         {"answer" : general1, "traineeId" : selectTraineeId, "questionTypeId" : "GENERAL", "instructorId" : selectInstructorId,
@@ -126,7 +124,7 @@ $(document).ready (function () {
         {"answer" : suggestions, "traineeId" : selectTraineeId, "questionTypeId" : "FOOTER", "instructorId" : selectInstructorId,
         "courseId": selectCourseId, "answerTypeId" : "OPEN"},
         {"answer" : topicSelect, "traineeId" : selectTraineeId, "questionTypeId" : "FOOTER", "instructorId" : selectInstructorId,
-        "courseId": selectCourseId, "answerTypeId" : "NUM"});
+        "courseId": selectCourseId, "answerTypeId" : "NUM"}]);
         console.log(form);
 
         $.ajax({
@@ -137,9 +135,6 @@ $(document).ready (function () {
             contentType: "application/json",
             success: function () {
                 alert("Form has been submitted");
-            },
-            error: function () {
-                alert("Form could not be submitted");
             }
         });
     });

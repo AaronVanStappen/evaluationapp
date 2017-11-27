@@ -7,6 +7,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class EvaluationServiceImpl implements EvaluationService {
@@ -21,17 +22,12 @@ public class EvaluationServiceImpl implements EvaluationService {
     }
 
     @Override
-    public int addAnswers(ArrayList<Answer> answerList) {
+    public int addAnswers(List<Answer> answerList) {
         return repository.addAnswers(answerList);
     }
 
     @Override
     public List<Answer> getAnswers(){
         return repository.getAnswers();
-    }
-
-    @Override
-    public int addAnswer(Answer answer) {
-        return repository.addAnswer(answer);
     }
 }

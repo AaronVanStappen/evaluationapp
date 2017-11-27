@@ -17,7 +17,6 @@ import java.util.List;
 public class EvaluationRepositoryImpl implements EvaluationRepository {
 
     private JdbcTemplate jdbcTemplate;
-    /*public List<Answer> answerList = new ArrayList();*/
 
     @Autowired
     EvaluationRepositoryImpl(JdbcTemplate jdbcTemplate) {
@@ -26,7 +25,7 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
 
     @Override
     @Transactional
-    public int addAnswers(ArrayList<Answer> answerList) {
+    public int addAnswers(List<Answer> answerList) {
 
         int numberAnswersInserted = 0;
         int questionType;
@@ -58,7 +57,7 @@ public class EvaluationRepositoryImpl implements EvaluationRepository {
             try {
                 answer.setId(rs.getInt("id"));
                 answer.setTraineeId(rs.getInt("traineeid"));
-                System.out.println(rs.getInt("questiontypeid"));
+                //System.out.println(rs.getInt("questiontypeid"));
                 answer.setQuestionTypeId(EnumMapper.mapToQuestionType(rs.getInt("questiontypeid") - 1));
                 answer.setAnswerTypeId(EnumMapper.mapToAnswerType(rs.getInt("answertypeid") - 1));
                 answer.setInstructorId(rs.getInt("instructorid"));

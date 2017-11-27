@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface EvaluationRepository {
 
-    int addAnswers(ArrayList<Answer> answerList);
+    int addAnswers(List<Answer> answerList);
 
     List<Answer> getAnswers();
 }
