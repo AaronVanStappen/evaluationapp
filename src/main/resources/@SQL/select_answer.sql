@@ -1,3 +1,3 @@
-use eval;
+USE eval;
 
 select * from answer;

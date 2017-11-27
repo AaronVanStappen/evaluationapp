@@ -1,3 +1,5 @@
+USE eval;
+
 SELECT * FROM answer;
 SELECT * FROM answertype;
 SELECT * FROM course;
